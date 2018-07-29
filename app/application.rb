@@ -28,6 +28,15 @@ class Application
       end
     end
 
+    if req.path.match(/add/)
+      if @@cart.length == 0
+        resp.write "Your cart is empty"
+      else
+        @@cart.each do |cart_item|
+          resp.write "#{cart_item}\n"
+        end
+      end
+    end
 
     resp.finish
   end
