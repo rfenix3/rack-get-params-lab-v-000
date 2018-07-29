@@ -27,7 +27,7 @@ class Application
       if @@items.include?(search_term)
         resp.write
       else
-        resp.write
+        resp.write "We don't have that item"
       end
 
     else
