@@ -24,7 +24,11 @@ class Application
       end
     elsif req.path.match(/add/)
       search_term = req.params["item"]
-      resp.write handle_search(search_term)
+      if @@items.include?(search_term)
+        resp.write
+      else
+        resp.write
+      end
 
     else
       resp.write "Path Not Found"
@@ -40,5 +44,5 @@ class Application
     end
   end
 
-  
+
 end
